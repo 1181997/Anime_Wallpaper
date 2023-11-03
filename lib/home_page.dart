@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
     // Shuffle the list of references
     var random = Random();
     print(random);
-    refs.shuffle();
+
 
     int count = min(3, refs.length); // Limit to 3 or the number of available images
     List<String> urls = [];
@@ -245,9 +245,9 @@ class _HomePageState extends State<HomePage> {
   }
 
 
-
   Widget buildCategoryList(String title, List<String> images) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       height: 250,
       decoration: ShapeDecoration(
         color: const Color(0xFF191818),
@@ -259,7 +259,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             child: Row(
               children: [
                 Text(
@@ -273,46 +273,108 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const Spacer(),
-
               ],
             ),
           ),
           const SizedBox(height: 5,),
-          GestureDetector(
-            onTap: (){
-              String imageurl = images.isNotEmpty ? images.first : "";
-              Navigator.push((context), MaterialPageRoute(builder: (context)=>FullViewPage(imageUrl: imageurl)));
-            },
-              child: SizedBox(
-              height: 200,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: images.length,
-                itemBuilder: (context, index) {
-                  try {
-                    return Container(
-                      width: 118,
+          Container(
+            child: Row(
+              children: [
+                for (String imageUrl in images)
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FullViewPage(imageUrl: imageUrl),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width *0.275,
                       height: 200,
-                      margin: const EdgeInsets.only(right: 10),
-                      child: Image.network(images[index], // Use Image.network to display images from URLs
-                        fit: BoxFit.cover,
-
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Image.network(
+                        imageUrl, // Use Image.network to display images from URLs
+                        fit: BoxFit.fill,
                       ),
-                    );
-                  } catch (e) {
-                    print('Error loading image: $e');
-                    return Container();
-                  }
-                },
-
-              ),
-              
-          ))
-            ],
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+  //
+  // Widget buildCategoryList(String title, List<String> images) {
+  //   return Container(
+  //     height: 250,
+  //     decoration: ShapeDecoration(
+  //       color: const Color(0xFF191818),
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(10),
+  //       ),
+  //     ),
+  //     child: Column(
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: [
+  //         Padding(
+  //           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+  //           child: Row(
+  //             children: [
+  //               Text(
+  //                 title,
+  //                 style: const TextStyle(
+  //                   color: Colors.white,
+  //                   fontSize: 14,
+  //                   fontFamily: 'Poppins',
+  //                   fontWeight: FontWeight.w600,
+  //                   height: 0,
+  //                 ),
+  //               ),
+  //               const Spacer(),
+  //
+  //             ],
+  //           ),
+  //         ),
+  //         const SizedBox(height: 5,),
+  //         GestureDetector(
+  //           onTap: (){
+  //             String imageurl = images.isNotEmpty ? images.first : "";
+  //             Navigator.push((context), MaterialPageRoute(builder: (context)=>FullViewPage(imageUrl: imageurl)));
+  //           },
+  //             child: SizedBox(
+  //             height: 200,
+  //             child: ListView.builder(
+  //               shrinkWrap: true,
+  //               scrollDirection: Axis.horizontal,
+  //               itemCount: images.length,
+  //               itemBuilder: (context, index) {
+  //                 try {
+  //                   return Container(
+  //                     width: 118,
+  //                     height: 200,
+  //                     margin: const EdgeInsets.only(right: 10),
+  //                     child: Image.network(images[index], // Use Image.network to display images from URLs
+  //                       fit: BoxFit.cover,
+  //
+  //                     ),
+  //                   );
+  //                 } catch (e) {
+  //                   print('Error loading image: $e');
+  //                   return Container();
+  //                 }
+  //               },
+  //
+  //             ),
+  //
+  //         ))
+  //           ],
+  //     ),
+  //   );
+  // }
 
 }
 
