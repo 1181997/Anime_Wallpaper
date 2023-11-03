@@ -104,9 +104,9 @@ class _FavouriteFullViewPageState extends State<FavouriteFullViewPage> {
                           ),
                         ),
                         child: IconButton(
-                          icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border,
-                            color: isFavorite ? Colors.red : Colors.white,
-                          ),
+                            icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border,
+                              color: isFavorite ? Colors.red : Colors.white,
+                            ),
                             onPressed:toggleFavorite
 
                         ),

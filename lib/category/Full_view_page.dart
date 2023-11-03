@@ -8,7 +8,7 @@ import '../favourite_page/favourite_page.dart';
 
 class FullViewPage extends StatefulWidget {
   final String imageUrl;
-    const FullViewPage({super.key, required this.imageUrl});
+  const FullViewPage({super.key, required this.imageUrl});
 
 
   @override
@@ -156,7 +156,7 @@ class _FullViewPageState extends State<FullViewPage> {
                           child: IconButton(
                             icon: const ImageIcon(AssetImage("assets/images/Group 5.png"),color: Colors.white),
                             onPressed: () {
-                             Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context)=>MyHomePage()), (route) => false);
+                              Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context)=>MyHomePage()), (route) => false);
 
                             },
                           ),

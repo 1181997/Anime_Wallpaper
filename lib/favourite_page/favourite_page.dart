@@ -78,9 +78,9 @@ class _FavouritePageState extends State<FavouritePage> {
                   itemBuilder: (context,index){
                     final imageUrl = globalFavorites[index];
                     return GestureDetector(
-                      onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FavouriteFullViewPage(imageUrl: imageUrl,)));
-                      },
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FavouriteFullViewPage(imageUrl: imageUrl,)));
+                        },
                         child: Container(
                           height: 150,
                           padding: const EdgeInsets.all(5),
