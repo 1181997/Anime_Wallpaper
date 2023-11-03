@@ -62,8 +62,15 @@ class LandingPage4 extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       TextButton(onPressed: (){
+
                         Navigator.pushAndRemoveUntil((context),
                             MaterialPageRoute(builder: (context)=>MyHomePage()), (route) => false);
+
+                        Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => MyHomePage(),
+                            ));
+
                       },
                           child: const Text("SKIP",
                             style: TextStyle(
