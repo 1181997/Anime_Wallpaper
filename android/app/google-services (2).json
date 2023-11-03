@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "631801115194",
+    "project_id": "anime-a7e60",
+    "storage_bucket": "anime-a7e60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631801115194:android:5802a26914411d5a15bb03",
+        "android_client_info": {
+          "package_name": "com.example.wallpaper_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631801115194-sdj8fvqlunuofdstl71ipprl9fvc5fng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wallpaper_app",
+            "certificate_hash": "43f75fe55aeaef63657d5a6932f522349631f1e1"
+          }
+        },
+        {
+          "client_id": "631801115194-c6prtv2b15jm6ls1cv6dp61ss5qejgeh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt6K_pnwt6lANcctcOSvzGCai1sN3zH3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631801115194-c6prtv2b15jm6ls1cv6dp61ss5qejgeh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "631801115194-3rr86gm5ao3ngb6cde9ct9fpc8jtegnl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wallpaperApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
